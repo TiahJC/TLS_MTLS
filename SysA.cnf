@@ -13,7 +13,7 @@ stateOrProvinceName             = SG
 localityName                    = TiahJC
 organizationName              = TiahJC
 organizationalUnitName          = TiahJC
-commonName                      = CAchangemeDNS
+commonName                      = SystemA
 emailAddress                    = ca@example.com
 
 [ req_attributes ]
