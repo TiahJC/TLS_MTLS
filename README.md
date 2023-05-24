@@ -1,11 +1,14 @@
 # TLS_MTLS
 
+## Example System 
+
+1. Certificate Authority (CA)
+2. SystemA
+3. SystemB
+
 ## Certificates
-Certificate Authority (CA)
 
-SystemA
 
-SystemB
 CA
 
 -> Private Key (CAkey.key)
