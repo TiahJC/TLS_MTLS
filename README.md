@@ -2,13 +2,19 @@
 
 ## Certificates
 Certificate Authority (CA)
-SystemA 
+
+SystemA
+
 SystemB
 CA
 -> Private Key (CAkey.key)
+
 -> Public Key   (CACert.pem)
+
 System A and B 
+
 -> Private Key (SysA.key SysB.key)
+
 -> Public Key (SysCertA.pem SysCertB.pem)
 
 
