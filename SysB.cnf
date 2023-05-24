@@ -1,0 +1,43 @@
+[ req ]
+default_bits        = 4096
+days				= 1095
+distinguished_name  = req_distinguished_name
+attributes			= req_attributes
+prompt				= no
+req_extensions    = req_ext
+
+
+[ req_distinguished_name ]
+countryName                     = SG
+stateOrProvinceName             = SG
+localityName                    = TiahJC
+organizationName              = TiahJC
+organizationalUnitName          = TiahJC
+commonName                      = SystemB
+emailAddress                    = ca@example.com
+
+[ req_attributes ]
+challengePassword 				= test
+
+[ req_ext ]
+subjectAltName  = @alternate_names
+
+[ v3_ext ]
+subjectKeyIdentifier    = hash
+authorityKeyIdentifier  = keyid,issuer:always
+basicConstraints        = CA:FALSE
+keyUsage                = dataEncipherment,digitalSignature, keyEncipherment
+extendedKeyUsage        = serverAuth, clientAuth
+subjectAltName  = @alternate_names
+nsComment               = "Self-Signed Certificate"
+authorityInfoAccess     = @issuer_info
+
+[ issuer_info ]
+OSCP;URI.0            = http://oscp.example.com/
+caIssuer;URI.o        = http://example.com/ca.cert/
+
+[ alternate_names ]
+DNS.1 = changeme.tiahjc.com
+DNS.2 = changemenumber1
+IP.1 = 127.0.0.1
+DNS.3 = localhost
