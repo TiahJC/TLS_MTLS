@@ -7,6 +7,7 @@ SystemA
 
 SystemB
 CA
+
 -> Private Key (CAkey.key)
 
 -> Public Key   (CACert.pem)
@@ -33,10 +34,24 @@ Lets straight jump to what does Certificate Authority do?
 From the 3 pointers, lets continue to explain what they actually means. 
 Certificates has a chains. Certificate Authority is also called a Issuer from the 1st Pointer. 
 
-For Example: 
-__> ISSUER => CertificateAuthorityA
-|
-|_____> SystemA => CertificateSystemA
+## How does TLS actually works?
+Each System has their either Private Keys and Public Keys OR KeyStore and TrustStore.
+KeyStore and TrustStore are JKS bundled keys, do the googling and search JKS KeyStore TrustStore Difference
 
-This will show a chains of certificates that the Certificate System A has. Issuer will be acting as a verifier if the browser/computer TrustStore has a record of the CA Public Certificate.
+Private Keys is to identity themselves and acts as a Decryptor
+Public Key is to act as a certificates to a system and acts as an Encryptor
+
+*Insert Photo Here PowerPoint Drawn SysA->SysB TLS only*
+
+There SysA will send it's Public key OR Certificate Authority ( CA ) that created SysA Certificate to SysB by any means. 
+After, when SysB wants to access SysA Website or System, SysA will send an encrypted code to verify if SysB has a copy of either CA? or SysCertA.pem
+
+## How does the "m" of mTLS means?
+Mutual TLS is what m stands for, exactly to what mutual means, Both System have to do both actions of TLS to one another. 
+In Short, 
+  1. SysA verify SysB
+  2. SysB verify SysA 
+Any form of error would cause Termination of connection between both system. 
+
+========================================================================================================================================================
 
