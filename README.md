@@ -54,7 +54,24 @@ Mutual TLS is what m stands for, exactly to what mutual means, Both System have 
 In Short, 
   1. SysA verify SysB
   2. SysB verify SysA 
+
 Any form of error would cause Termination of connection between both system. 
 
-========================================================================================================================================================
+# CNF File
+Configuration File for creating Certificate.
+This allow us to set multiple settings and restrictions to the Certificate.
+We could create certificate without CNF file.
+
+# Public Certificate Public Key.
++ Public Certificate/ Public Key is the key which will be exposed to connect with other application/browsers.
++ This key can be used to authenticate Certificates.
++ By Verifying applications, Receiver of the certificate will be verifying if the certificate is authorized. There is 3 possible methods
+  - 1. By inserting the Public Key into system trusted store.
+  - 2. By inserting CA of the Public Key into system trusted store.
+  - 3. By creating a TrustStore JKS and linked to the system application.
+# Private Certificate Private Key
++ Private Key specify who you are and authentication method.
++ Public Key/CA will be sent and verified with Private key
+
+  
 
